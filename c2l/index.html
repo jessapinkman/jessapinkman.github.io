@@ -570,6 +570,62 @@ class="navbar-burger" aria-label="menu" aria-expanded="false">
   </section>
 
 
+  <section class="section" style="margin-top: 0; padding-top: 50px;">
+    <h2 class="title is-4" style="text-align: center;">Limitations</h2>
+    <div class="demo-block">
+      <!-- <div style="padding: 10px;">
+        <div style="border: solid gray; border-radius: 10px; border-width: 1px; padding: 10px;">
+          <h2 class="title is-5" style="text-align: center;"></h2>
+          <img class="summary-img" src="" width="95%">
+        </div>
+      </div> -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width" style="text-align: center;">
+          <p>
+            Failure scenarios on the both benchmarks. (<span
+              style="color: rgb(207, 12, 12);">Playspeed <span>&times</span> 2</span>)
+          </p><br>
+        </div>
+      </div>
+    </div>
+      <div class="container is-max-desktop">
+        <div class="demo-block">
+          <div class="video-grid-1">
+            <video class="video-border" autoplay controls muted loop playsinline>
+              <source src="./static/videos/nuplan/ped_cross/failure_waiting_for_pedestrian_to_cross - 2021.05.25.12.40.06_veh-47_05213_05515 - e3342e2e8b535405.mp4"
+                type="video/mp4">
+            </video>
+            <h2>Although the shortcut eliminator prevents the planner from taking shortcuts based on low-dimensional features, the excessively rapid startup cannot effectively manage emergencies and slightly compromises comfort.</h2>
+          </div>
+
+
+      <div class="container is-max-desktop">
+        <div class="demo-block">
+          <div class="video-grid-1">
+            <video class="video-border" autoplay controls muted loop playsinline>
+              <source src="./static/videos/interplan/htd/failure_high_traffic_density - 2021.05.25.12.30.39_veh-25_00321_01196 - d480a5d2b0fe5fe6-dhgloa.mp4"
+                type="video/mp4">
+            </video>
+            <h2>The purple trajectory represents the target set of points that the planner aims to reach after executing multiple lane changes. However,  the planner's input does not account for the mission goal and lacks an effective lane change strategy. It becomes disoriented at the intersection, resulting in a collision.</h2>
+          </div>
+      
+      <div class="container is-max-desktop">
+        <div class="demo-block">
+          <div class="video-grid-1">
+            <video class="video-border" autoplay controls muted loop playsinline>
+              <source src="./static/videos/interplan/avoid_crashed/failure_avoid_crashed_cars - 2021.09.22.03.46.15_veh-51_01522_02013 - cd0e827efbe85a8f-s0.mp4"
+                type="video/mp4">
+            </video>
+            <h2>The planner has not yet reached human-level driving capabilities and struggles to handle extreme scenarios, such as driving against traffic to avoid unexpected situations.</h2>
+          </div>
+
+        
+
+      </div>
+    </div>
+  </section>
+
   <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>

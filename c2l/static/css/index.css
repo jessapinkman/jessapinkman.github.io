@@ -151,6 +151,10 @@ body {
   border-radius: 5px;
 }
 
+.video-grid-1 h2{
+  text-align: justify;
+}
+
 .video-grid-2 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
