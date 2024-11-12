@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Traffic Simulation based on Sumo and Carla">
+  <meta name="keywords" content="Autonomous Driving, Imitation Learning, Planning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Traffic Simulation based on Sumo and Carla</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href=""> -->
+  <!-- website label -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <!-- <script src="./static/js/index.js"></script> -->
+</head>
+
+<body>
+
+  <!-- <nav class="navbar"
+
+  <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://keunhong.com">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://hypernerf.github.io">
+              HyperNeRF
+            </a>
+            <a class="navbar-item" href="https://nerfies.github.io">
+              Nerfies
+            </a>
+            <a class="navbar-item" href="https://latentfusion.github.io">
+              LatentFusion
+            </a>
+            <a class="navbar-item" href="https://photoshape.github.io">
+              PhotoShape
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav> -->
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">
+              <font style="color: default;">Traffic Simulation based on Sumo and Carla
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://github.com/jessapinkman" target=”_blank”>Haojie Xin</a>,</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Xi'an Jiaotong University,  </span>
+              <span class="author-block">Synkrotron Inc. </span>
+            </div <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://jessapinkman.github.io/c2l" class="external-link button is-normal is-rounded is-gray">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2404.14327" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/jessapinkman/c2l" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Abstract. -->
+  <!-- <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered" style="border-radius: 10px; padding: 10px;">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            We present PLUTO, a powerful framework that <u>P</u>ushes the <u>L</u>imit of imitation
+            learning-based planning for a<u>UTO</u>nomous driving.
+            Our improvements stem from three pivotal aspects:
+            a longitudinal-lateral aware model architecture that enables flexible and diverse driving behaviors; An
+            innovative auxiliary loss computation method that is broadly applicable and efficient for batch-wise
+            calculation; A novel training framework that leverages contrastive learning, augmented by a suite of new
+            data augmentations to regulate driving behavior and facilitate the understanding of underlying interactions.
+            We assessed our framework using the large-scale real-world nuPlan dataset and its associated standardized
+            planning benchmark.
+            Impressively, PLUTO achieves state-of-the-art closed-loop performance, beating other competing
+            learning-based methods and surpassing the current top-performed rule-based planner for the first time.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- <section class="section" style="margin-top: 0; padding-top: 50px;">
+    <h2 class="title is-4" style="text-align: center;">Method Overview</h2>
+    <div class="container is-max-desktop">
+      <div class="demo-block">
+        <div style="padding: 10px;">
+          <h2 class="title is-5" style="text-align: center;">Model Architecture</h2>
+          <img class="summary-img" src="static/images/model.svg" width="85%">
+          <div style="padding: 10px; margin-left: 30px; margin-right: 30px;">
+            <p style="text-align: left;">
+              We introduce a query-based model architecture that simultaneously addresses lateral and longitudinal
+              planning maneuvers, enabling flexible and diverse driving behaviors.
+            </p>
+          </div>
+        </div>
+
+        <div style="padding: 10px;">
+          <h2 class="title is-5" style="text-align: center;">Auxiliary Loss Computation Method</h2>
+          <img class="summary-img" src="static/images/aux_loss.svg" width="85%">
+          <div style="padding: 10px; margin-left: 30px; margin-right: 30px;">
+            <p style="text-align: left;">
+              We propose a novel method for calculating auxiliary loss based on differential interpolation. This method
+              is
+              applicable to a broad spectrum of auxiliary tasks and allows for efficient batch-wise computation in
+              vector-based models.
+            </p>
+          </div>
+        </div>
+
+        <div style="padding: 10px;">
+          <h2 class="title is-5" style="text-align: center;">Contrastive Imitation Learning Framework</h2>
+          <img class="summary-img" src="static/images/cil.svg" width="85%">
+          <img class="summary-img" src="static/images/augs.svg" width="80%">
+          <div style="padding: 10px; margin-left: 30px; margin-right: 30px;">
+            <p style="text-align: left; text-wrap: pretty;">
+              We present the Contrastive Imitation Learning (CIL) framework, accompanied by a new set of data
+              augmentations. The CIL framework is aimed at regulating driving behaviors and enhancing interaction
+              learning, without significantly increasing the complexity of training.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section> -->
+
+
+
+  <!-- <section class="section" style="margin-top: 0; padding-top: 50px;">
+    <h2 class="title is-4" style="text-align: center;">Qualitative Results</h2>
+    <div class="container is-max-desktop">
+    </div>
+
+
+    <div class="container is-max-desktop">
+      <div class="demo-block">
+        <div style="padding: 10px;">
+          <div style="border: solid gray; border-radius: 10px; border-width: 1px; padding: 10px;">
+            <h2 class="title is-5" style="text-align: center;">Legend</h2>
+            <img class="summary-img" src="static/images/legend.svg" width="95%">
+          </div>
+        </div>
+
+        <div class="video-grid-2">
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="static/videos/qua_res/2021.09.13.13.03.21_veh-28_01082_01561_22958312e28e5d9f.mp4"
+              type="video/mp4">
+          </video>
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/qua_res/2021.10.05.06.31.40_veh-52_01598_02013_f7f0989080295b75.mp4"
+              type="video/mp4">
+          </video>
+        </div>
+        <div class="text-grid-2">
+          <div class="grid-content">
+            Overtake a slow leading vehicle.
+          </div>
+          <div class="grid-content">
+            Navigates around the parking vehicle.
+          </div>
+        </div>
+
+        <div class="video-grid-2">
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="static/videos/qua_res/2021.09.16.13.05.51_veh-42_01597_01965_4aeaa8bebf7a57f1.mp4"
+              type="video/mp4">
+          </video>
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/qua_res/2021.09.09.17.18.51_veh-48_00889_01147_1039c939079950f4.mp4"
+              type="video/mp4">
+          </video>
+        </div>
+        <div class="text-grid-2">
+          <div class="grid-content">
+            Dynamic lane change & perception errors.
+          </div>
+          <div class="grid-content">
+            Left turn at a complex intersection.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section> -->
+
+
+  <section class="section" style="margin-top: 0; padding-top: 50px;">
+    <h2 class="title is-4" style="text-align: center;">Traffic simulation based on Carla</h2>
+      <div class="demo-block">
+      <!-- <div style="padding: 10px;">
+        <div style="border: solid gray; border-radius: 10px; border-width: 1px; padding: 10px;">
+          <h2 class="title is-5" style="text-align: center;">Legend</h2>
+          <img class="summary-img" src="" width="95%">
+        </div>
+      </div> -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width" style="text-align: center;">
+          <p>
+            <span
+              style="color: rgb(207, 12, 12);">Playspeed <span>&times</span> 2</span>
+          </p><br>
+        </div>
+      </div>
+    </div>
+    <div class="container is-max-desktop">
+      <div class="demo-block">
+        <h2><b> Driver models with different driving styles. The one on the right is more aggressive than the one on the left, e.g., has a higher probability of changing lanes.</b></h2>
+        <div class="video-grid-2">
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/carla/normal_driving_model.mp4"
+              type="video/mp4">
+          </video>
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/carla/aggressive_driving_model.mp4"
+              type="video/mp4">
+          </video>
+        </div>
+
+        <h2><b>Highway exit ramp: the leading car rushes to exit the ramp from the far left (left); the red car in the middle merges into the right lane, and the black car behind gives way</b></h2>
+        <div class="video-grid-2">
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/carla/exit_ramp_in_highway1.mp4"
+              type="video/mp4">
+          </video>
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/carla/exit_ramp_in_highway2.mp4"
+              type="video/mp4">
+          </video>
+        </div>
+
+        <h2><b>Mixed traffic scenarios: Pedestrians give way to motorcycles passing at high speed (left); Pedestrians cross the road, and motor vehicles give way</b></h2>
+        <div class="video-grid-1">
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/carla/intersection_traffic_flow.mp4"
+              type="video/mp4">
+          </video>
+        </div>
+
+        <h2><b>Traffic flow at intersection</b></h2>
+        <div class="video-grid-1">
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/carla/intersection_traffic_flow.mp4"
+              type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="section" style="margin-top: 0; padding-top: 50px;">
+    <h2 class="title is-4" style="text-align: center;">Traffic simulation based on Sumo</h2>
+    <div class="demo-block">
+      <!-- <div style="padding: 10px;">
+        <div style="border: solid gray; border-radius: 10px; border-width: 1px; padding: 10px;">
+          <h2 class="title is-5" style="text-align: center;"></h2>
+          <img class="summary-img" src="" width="95%">
+        </div>
+      </div> -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width" style="text-align: center;">
+          <p>
+            C<sup>2</sup>L shows generalization capabilities for long-tail scenarios. (<span
+              style="color: rgb(207, 12, 12);">Playspeed <span>&times</span> 2</span>)
+          </p><br>
+        </div>
+      </div>
+    </div>
+    <div class="container is-max-desktop">
+      <div class="demo-block">
+        <h2><b>Approaching construction zone</b></h2>
+        <div class="video-grid-2">
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/interplan/constr/approaching_construction_zone - 2021.05.25.14.16.10_veh-35_00083_00485 - 6dd2064204c654b7-s0.mp4"
+              type="video/mp4">
+          </video>
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/interplan/constr/approaching_construction_zone - 2021.10.06.02.32.50_veh-53_00633_00800 - 71f182558ee95100-s6.mp4"
+              type="video/mp4">
+          </video>
+        </div>
+
+
+        <h2><b>Avoid crashed cars</b></h2>
+        <div class="video-grid-2">
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/interplan/avoid_crashed/avoid_crashed_cars - 2021.05.25.14.16.10_veh-35_00083_00485 - 6dd2064204c654b7-s2(2).mp4"
+              type="video/mp4">
+          </video>
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/interplan/avoid_crashed/avoid_crashed_cars - 2021.10.06.02.32.50_veh-53_00633_00800 - c710330e5114501c-s0.mp4"
+              type="video/mp4">
+          </video>
+        </div>
+        
+        <h2><b>Jaywalking pedestrian</b></h2>
+        <div class="video-grid-2">
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/interplan/jaywalking/jaywalking_pedestrian - 2021.10.06.02.32.50_veh-53_00633_00800 - 71f182558ee95100-s8.mp4"
+              type="video/mp4">
+          </video>
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/interplan/jaywalking/jaywalking_pedestrian - 2021.10.06.02.32.50_veh-53_00633_00800 - 71f182558ee95100-s9.mp4"
+              type="video/mp4">
+          </video>
+        </div>
+
+
+        <h2><b>Nudge around parked vehicle</b></h2>
+        <div class="video-grid-2">
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/interplan/nudge/nudge_around_parked_vehicle - 2021.10.06.04.07.24_veh-49_00776_01719 - 948201ecfe2c560a-s0.mp4"
+              type="video/mp4">
+          </video>
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/interplan/nudge/nudge_around_parked_vehicle - 2021.09.22.03.46.15_veh-51_01522_02013 - 81f400b414215325-s1.mp4"
+              type="video/mp4">
+          </video>
+        </div>
+
+        <h2><b>High and low traffic densit</b></h2>
+        <div class="video-grid-2">
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/interplan/htd/high_traffic_density - 2021.06.03.12.02.06_veh-35_04692_04763 - feb82815b92a5512-dhgrom.mp4"
+              type="video/mp4">
+          </video>
+          <video class="video-border" autoplay controls muted loop playsinline>
+            <source src="./static/videos/interplan/ltd/low_traffic_density - 2021.06.03.12.02.06_veh-35_04692_04763 - feb82815b92a5512-dlgroc.mp4"
+              type="video/mp4">
+          </video>
+        </div>
+
+        
+
+      </div>
+    </div>
+  </section> -->
+
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code></code></pre>
+    </div>
+  </section> -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="content">
+          <p>
+            Project page is inspired by <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript">
+    var videos = document.querySelectorAll('video');
+    for (var i = 0; i < videos.length; i++) {
+      videos[i].playbackRate = 2.0;
+    }
+  </script>
+
+</body>
+
+
+</html>
