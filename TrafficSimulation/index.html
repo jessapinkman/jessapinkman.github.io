@@ -85,7 +85,7 @@ class="navbar-burger" aria-label="menu" aria-expanded="false">
             </h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://github.com/jessapinkman" target=”_blank”>Haojie Xin</a>,</span>
+                <a href="https://github.com/jessapinkman" target=”_blank”>Haojie Xin</a></span>
             </div>
 
             <div class="is-size-5 publication-authors">
@@ -289,7 +289,7 @@ class="navbar-burger" aria-label="menu" aria-expanded="false">
           </video>
         </div>
 
-        <h2><b>Highway exit ramp: the leading car rushes to exit the ramp from the far left (left); the red car in the middle merges into the right lane, and the black car behind gives way</b></h2>
+        <h2><b>Highway exit ramp: the leading car rushes to exit the ramp from the far left (left); the red car in the middle merges into the right lane, and the black car behind gives way (right).</b></h2>
         <div class="video-grid-2">
           <video class="video-border" autoplay controls muted loop playsinline>
             <source src="./static/videos/carla/exit_ramp_in_highway1.mp4"
@@ -301,15 +301,15 @@ class="navbar-burger" aria-label="menu" aria-expanded="false">
           </video>
         </div>
 
-        <h2><b>Mixed traffic scenarios: Pedestrians give way to motorcycles passing at high speed (left); Pedestrians cross the road, and motor vehicles give way</b></h2>
+        <h2><b>Mixed traffic scenarios: Pedestrians give way to motorcycles passing at high speed (left); Pedestrians cross the road, and motor vehicles give way (right).</b></h2>
         <div class="video-grid-1">
           <video class="video-border" autoplay controls muted loop playsinline>
-            <source src="./static/videos/carla/intersection_traffic_flow.mp4"
+            <source src="./static/videos/carla/mixed_traffic_flow.mp4"
               type="video/mp4">
           </video>
         </div>
 
-        <h2><b>Traffic flow at intersection</b></h2>
+        <h2><b>Traffic flow at intersection.</b></h2>
         <div class="video-grid-1">
           <video class="video-border" autoplay controls muted loop playsinline>
             <source src="./static/videos/carla/intersection_traffic_flow.mp4"
@@ -321,12 +321,15 @@ class="navbar-burger" aria-label="menu" aria-expanded="false">
     </div>
   </section>
 
-  <!-- <section class="section" style="margin-top: 0; padding-top: 50px;">
+
+
+
+  <section class="section" style="margin-top: 0; padding-top: 50px;">
     <h2 class="title is-4" style="text-align: center;">Traffic simulation based on Sumo</h2>
-    <div class="demo-block">
+      <div class="demo-block">
       <!-- <div style="padding: 10px;">
         <div style="border: solid gray; border-radius: 10px; border-width: 1px; padding: 10px;">
-          <h2 class="title is-5" style="text-align: center;"></h2>
+          <h2 class="title is-5" style="text-align: center;">Legend</h2>
           <img class="summary-img" src="" width="95%">
         </div>
       </div> -->
@@ -334,88 +337,52 @@ class="navbar-burger" aria-label="menu" aria-expanded="false">
       <div class="columns is-centered">
         <div class="column is-full-width" style="text-align: center;">
           <p>
-            C<sup>2</sup>L shows generalization capabilities for long-tail scenarios. (<span
-              style="color: rgb(207, 12, 12);">Playspeed <span>&times</span> 2</span>)
+            <span
+              style="color: rgb(207, 12, 12);">Playspeed <span>&times</span> 2</span>
           </p><br>
         </div>
       </div>
     </div>
     <div class="container is-max-desktop">
       <div class="demo-block">
-        <h2><b>Approaching construction zone</b></h2>
+
+        <h2><b>Continuous traffic flow with unprotected left turn (left); crossing an intersection without traffic lights (right).</b></h2>
         <div class="video-grid-2">
           <video class="video-border" autoplay controls muted loop playsinline>
-            <source src="./static/videos/interplan/constr/approaching_construction_zone - 2021.05.25.14.16.10_veh-35_00083_00485 - 6dd2064204c654b7-s0.mp4"
+            <source src="./static/videos/sumo/unprotected_left.mkv"
               type="video/mp4">
           </video>
           <video class="video-border" autoplay controls muted loop playsinline>
-            <source src="./static/videos/interplan/constr/approaching_construction_zone - 2021.10.06.02.32.50_veh-53_00633_00800 - 71f182558ee95100-s6.mp4"
+            <source src="./static/videos/sumo/crossing_intersection_without_signals.mp4"
               type="video/mp4">
           </video>
         </div>
-
-
-        <h2><b>Avoid crashed cars</b></h2>
-        <div class="video-grid-2">
-          <video class="video-border" autoplay controls muted loop playsinline>
-            <source src="./static/videos/interplan/avoid_crashed/avoid_crashed_cars - 2021.05.25.14.16.10_veh-35_00083_00485 - 6dd2064204c654b7-s2(2).mp4"
-              type="video/mp4">
-          </video>
-          <video class="video-border" autoplay controls muted loop playsinline>
-            <source src="./static/videos/interplan/avoid_crashed/avoid_crashed_cars - 2021.10.06.02.32.50_veh-53_00633_00800 - c710330e5114501c-s0.mp4"
-              type="video/mp4">
-          </video>
-        </div>
-        
-        <h2><b>Jaywalking pedestrian</b></h2>
-        <div class="video-grid-2">
-          <video class="video-border" autoplay controls muted loop playsinline>
-            <source src="./static/videos/interplan/jaywalking/jaywalking_pedestrian - 2021.10.06.02.32.50_veh-53_00633_00800 - 71f182558ee95100-s8.mp4"
-              type="video/mp4">
-          </video>
-          <video class="video-border" autoplay controls muted loop playsinline>
-            <source src="./static/videos/interplan/jaywalking/jaywalking_pedestrian - 2021.10.06.02.32.50_veh-53_00633_00800 - 71f182558ee95100-s9.mp4"
-              type="video/mp4">
-          </video>
-        </div>
-
-
-        <h2><b>Nudge around parked vehicle</b></h2>
-        <div class="video-grid-2">
-          <video class="video-border" autoplay controls muted loop playsinline>
-            <source src="./static/videos/interplan/nudge/nudge_around_parked_vehicle - 2021.10.06.04.07.24_veh-49_00776_01719 - 948201ecfe2c560a-s0.mp4"
-              type="video/mp4">
-          </video>
-          <video class="video-border" autoplay controls muted loop playsinline>
-            <source src="./static/videos/interplan/nudge/nudge_around_parked_vehicle - 2021.09.22.03.46.15_veh-51_01522_02013 - 81f400b414215325-s1.mp4"
-              type="video/mp4">
-          </video>
-        </div>
-
-        <h2><b>High and low traffic densit</b></h2>
-        <div class="video-grid-2">
-          <video class="video-border" autoplay controls muted loop playsinline>
-            <source src="./static/videos/interplan/htd/high_traffic_density - 2021.06.03.12.02.06_veh-35_04692_04763 - feb82815b92a5512-dhgrom.mp4"
-              type="video/mp4">
-          </video>
-          <video class="video-border" autoplay controls muted loop playsinline>
-            <source src="./static/videos/interplan/ltd/low_traffic_density - 2021.06.03.12.02.06_veh-35_04692_04763 - feb82815b92a5512-dlgroc.mp4"
-              type="video/mp4">
-          </video>
-        </div>
-
-        
 
       </div>
     </div>
-  </section> -->
+  </section>
 
-  <!-- <section class="section" id="BibTeX">
+
+
+  <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code></code></pre>
+      <pre><code>@article{xin2024litsim,
+        title={LitSim: Conflict-aware Policy for Long-term Interactive Traffic Simulation},
+        author={Xin, Haojie and Zhang, Xiaodong and Tang, Renzhi and Yan, Songyang and Zhao, Qianrui and Yang, Chunze and Yang, Zijiang},
+        journal={arXiv preprint arXiv:2403.04299},
+        year={2024}
+      }
+@inproceedings{kuefler2017imitating,
+        title={Imitating driver behavior with generative adversarial networks},
+        author={Kuefler, Alex and Morton, Jeremy and Wheeler, Tim and Kochenderfer, Mykel},
+        booktitle={2017 IEEE intelligent vehicles symposium (IV)},
+        pages={204--211},
+        year={2017},
+        organization={IEEE}
+      }</code></pre>
     </div>
-  </section> -->
+  </section>
 
 
   <footer class="footer">
